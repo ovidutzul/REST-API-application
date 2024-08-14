@@ -8,9 +8,9 @@ const avatarDir = path.join(__dirname, "../../", "public", "avatars");
 
 const updateAvatar = async (req, res) => {
   const { _id } = req.user;
-  const { path: tempUpload, originalname } = req.file;
+  const { path: tempUpload, originalName } = req.file;
 
-  const filename = `${_id}_${originalname}`;
+  const filename = `${_id}_${originalName}`;
   const resultUpload = path.join(avatarDir, filename);
 
   Jimp.read(tempUpload, (_, filename) => {
